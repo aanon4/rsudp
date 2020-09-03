@@ -88,7 +88,7 @@ class Custom(ConsumerThread):
 			printM('Executing code from file: %s' % self.codefile, sender=self.sender)
 			try:
 				# try to execute some code
-				exec(self.codefile)
+				exec(open(self.codefile).read())
 			except Exception as e:
 				# do something if it fails
 				printE('Code execution failed. Error: %s' % e, sender=self.sender, announce=False)
